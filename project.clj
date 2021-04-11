@@ -5,7 +5,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [ring "1.5.0"]
-                 [compojure "1.5.1"]]
+                 [compojure "1.5.1"]
+                 [hiccup "1.0.5"]]
   :main ^:skip-aot learning-compojure.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
