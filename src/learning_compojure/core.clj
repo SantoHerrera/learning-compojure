@@ -41,20 +41,7 @@
   (html [:h1 boolean "nice"]))
 
 
-
 (defn get-login-info [req]
-    (let [{:keys [params]} req
-          param-name (get params "name")
-          email (get params "email")
-          password (get params "password")]
-        (println "my get-login-info " "params:" params)
-        (html [:div
-               [:p "email youve submitted " email]
-               [:br]
-               [:p "password " password]])))
-
-
-(defn get-login-infoV2 [req]
     (let [{:keys [params]} req
           param-name (get params "name")
           email (get params "email")
@@ -95,7 +82,7 @@
   (GET "/doesnt-exist" [] (doesnt-exist))
   (GET "/does-exist" [] (does-exist))
   ;(GET "/test" (test1))
-  (POST "/get-login-info" [req] (get-login-infoV2 req))
+  (POST "/get-login-info" req (get-login-info req))
   ;(GET "/does-user-exist?" req (does-user-exist?))
   (not-found (not-found1)))
 
